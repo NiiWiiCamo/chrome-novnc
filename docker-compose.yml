@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   chrome-novnc:
     container_name: chrome-novnc
@@ -9,7 +7,16 @@ services:
       - VNC_SHARED=${VNC_SHARED-false}
       - VNC_RESOLUTION=${VNC_RESOLUTION-1280x720}
       - PORT=8080
+    # - SINGLETON_CLEANUP=true    # default, set to false to prevent multiple instances accessing profile storage
+    # - USERAGENT=""              # adds --user-agent="$USERAGENT" flag only if string is set
     image: vital987/chrome-novnc:latest
+    ## optional: add persistent storage for browser profile
+    # volumes:
+    #   - profile:/root/.config/chromium
     ports:
       - "${HOST_PORT-8080}:8080/tcp"
     restart: always
+
+## optional: create volume for browser profile
+# volumes:
+#   profile:
