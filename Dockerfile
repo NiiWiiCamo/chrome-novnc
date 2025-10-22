@@ -1,8 +1,8 @@
-FROM alpine:3.19.1
+FROM alpine:latest
 
 LABEL AboutImage "Alpine_Chromium_NoVNC"
 
-LABEL Maintainer "Apurv Vyavahare <apurvvyavahare@gmail.com>"
+LABEL Maintainer "NiiWiiCamo"
 
 #VNC Server Password
 ENV	VNC_PASS="CHANGE_IT" \
@@ -23,7 +23,7 @@ ENV	VNC_PASS="CHANGE_IT" \
 	LANG=en_US.UTF-8 \
 	LANGUAGE=en_US.UTF-8 \
 	LC_ALL=C.UTF-8 \
-	TZ="Asia/Kolkata"
+	TZ="Etc/UTC"
 
 COPY assets/ /
 
