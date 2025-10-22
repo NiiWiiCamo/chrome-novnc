@@ -30,7 +30,7 @@ COPY assets/ /
 RUN	apk update && \
 	apk add --no-cache tzdata ca-certificates supervisor curl wget openssl bash python3 py3-requests sed unzip xvfb x11vnc websockify openbox chromium nss alsa-lib font-noto font-noto-cjk && \
 # noVNC SSL certificate
-	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=ETC/O=UTC/CN=www.google.com" -keyout /etc/ssl/novnc.key -out /etc/ssl/novnc.cert > /dev/null 2>&1 && \
+	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=US/O=DC/CN=www.google.com" -keyout /etc/ssl/novnc.key -out /etc/ssl/novnc.cert > /dev/null 2>&1 && \
 # TimeZone
 	cp /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
