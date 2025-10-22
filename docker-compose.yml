@@ -9,7 +9,7 @@ services:
       - PORT=8080
     # - SINGLETON_CLEANUP=true    # default, set to false to prevent multiple instances accessing profile storage
     # - USERAGENT=""              # adds --user-agent="$USERAGENT" flag only if string is set
-    image: vital987/chrome-novnc:latest
+    image: ghcr.io/niiwiicamo/chrome-novnc:latest
     ## optional: add persistent storage for browser profile
     # volumes:
     #   - profile:/root/.config/chromium
